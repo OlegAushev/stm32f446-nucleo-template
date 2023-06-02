@@ -142,13 +142,13 @@ target_link_options(${executable} PRIVATE
     -u_printf_float			# allows to use printf with float
 )
 
-# target_link_directories(${executable} PRIVATE
-#     ${PROJECT_SOURCE_DIR}/drivers/CMSIS/DSP/Lib/GCC
-# )
+target_link_directories(${executable} PRIVATE
+    ${PROJECT_SOURCE_DIR}/drivers/CMSIS/DSP/Lib/GCC
+)
 
-# target_link_libraries(${executable}
-#     libarm_cortexM7lfsp_math.a
-# )
+target_link_libraries(${executable}
+    libarm_cortexM4lf_math.a
+)
 
 ################################################################################
 # Misc Options and Post-build Tasks
