@@ -13,7 +13,7 @@ GitInfoSetup()
 
 ################################################################################
 # Microcontroller Information
-set(mcu_devboard STM32F446_Nucleo)
+set(mcu_devboard STM32F446_NUCLEO)
 set(mcu_family STM32F4xx)
 set(mcu_model STM32F446xx)
 set(cpu_parameters
@@ -73,6 +73,8 @@ target_compile_definitions(${executable} PRIVATE
     $<$<CONFIG:Debug>:DEBUG>
     $<$<CONFIG:Debug>:USE_FULL_ASSERT>
     ${mcu_model}
+    ${mcu_family}
+    ${mcu_devboard}
     USE_HAL_DRIVER
 )
 

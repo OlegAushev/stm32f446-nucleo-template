@@ -1,0 +1,9 @@
+[submodule "include/bsp_stm32"]
+	path = include/bsp_stm32
+	url = git@github.com:OlegAushev/bsp_stm32.git
+[submodule "include/mculib_stm32"]
+	path = include/mculib_stm32
+	url = git@github.com:OlegAushev/mculib_stm32.git
+[submodule "include/emblib_stm32"]
+	path = include/emblib_stm32
+	url = git@github.com:OlegAushev/emblib_stm32.git
