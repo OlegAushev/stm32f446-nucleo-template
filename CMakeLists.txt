@@ -17,9 +17,9 @@ set(mcu_devboard STM32F446_NUCLEO)
 set(mcu_family STM32F4xx)
 set(mcu_model STM32F446xx)
 set(cpu_parameters
-    -mcpu=cortex-m7
+    -mcpu=cortex-m4
     -mthumb
-    -mfpu=fpv5-sp-d16
+    -mfpu=fpv4-sp-d16
     -mfloat-abi=hard)
 
 set(mcu_startup_script ${PROJECT_SOURCE_DIR}/src/startup_stm32f446xx.s)

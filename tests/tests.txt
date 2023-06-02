@@ -1,0 +1,41 @@
+#include "tests.h"
+
+
+#include <emblib_stm32/tests/tests.h>
+#include <mculib_stm32/h7/tests/tests.h>
+#include <cli/cli_server.h>
+
+
+void emb::run_tests()
+{
+	emb::test_runner::print = cli::print_blocking;
+	emb::test_runner::print_nextline = cli::nextline_blocking;
+
+#ifndef EMB_TESTS_ENABLED
+    emb::test_runner::print("EMB_TESTS_ENABLED is off, emblib tests disabled.");
+    emb::test_runner::print_nextline();
+#endif
+    EMB_RUN_TEST(emb::tests::common_test);
+    EMB_RUN_TEST(emb::tests::math_test);
+    EMB_RUN_TEST(emb::tests::algorithm_test);
+    EMB_RUN_TEST(emb::tests::array_test);
+    EMB_RUN_TEST(emb::tests::queue_test);
+    EMB_RUN_TEST(emb::tests::circular_buffer_test);
+    EMB_RUN_TEST(emb::tests::filter_test);
+    EMB_RUN_TEST(emb::tests::stack_test);
+    EMB_RUN_TEST(emb::tests::static_vector_test);
+    EMB_RUN_TEST(emb::tests::string_test);
+    EMB_RUN_TEST(emb::tests::chrono_test);
+
+#ifndef MCU_TESTS_ENABLED
+    emb::test_runner::print("MCU_TESTS_ENABLED is off, mculib tests disabled.");
+    emb::test_runner::print_nextline();
+#endif
+	EMB_RUN_TEST(mcu::tests::gpio_test);
+	EMB_RUN_TEST(mcu::tests::chrono_test);
+
+	emb::test_runner::print_result();
+}
+
+
+
